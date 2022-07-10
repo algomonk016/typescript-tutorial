@@ -26,3 +26,12 @@ commit #6:
     so, use tuple to fix position of type
     
     type MatchData = [Date, string, string, number, number, MatchResult, string]
+
+commit #7:
+  issue:
+    right now, the code is only for current csv file only, because of type MatchData,
+    is any other csv comes, we'll need to change the code
+
+    so, turn CsvFileReader to an abstract class
+    and use Generics,
+    class ClassName<T> {}
