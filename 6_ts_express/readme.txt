@@ -1,6 +1,7 @@
 auth type website
 
-issues of using typescript with packages and modules:
+commit #10
+  issues of using typescript with packages and modules:
   middleware:
     1. take request and response, and do required action, add or remove properties
     and has ref to next middleware
@@ -15,3 +16,6 @@ issues of using typescript with packages and modules:
 
     2. type definition files don't tell us whole story, 
     and sometimes it tells wrong story
+
+commit #11
+  login and logout feature
