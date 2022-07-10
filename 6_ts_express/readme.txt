@@ -73,3 +73,8 @@ commit #13
 
     - are applied only once, when the code for the class is ran
       (not when the instance is created)
+
+commit #14:
+  decorator factories
+    - used to make decorators generic
+    - nothing but a simple function that returns a decorator
