@@ -35,3 +35,60 @@ commit #7:
     so, turn CsvFileReader to an abstract class
     and use Generics,
     class ClassName<T> {}
+
+commit #8:
+  used composition instead of inheritance
+
+  inheritance: ('is a' relationship)
+
+    we can say, MatchReader 'is a' CsvFileReader, because, MatchReader 
+    has all the methods & properties that belongs to CsvFileReader as well
+
+    abstract class CsvFileReader        -> class MatchReader
+      read(): void                            mapRow(string[]): MatchData
+      mapRow(string[]): MatchData       -> class MovieReader
+        (abstract method)                     mapRow(string[]): MovieData
+
+  ------------------------------------------------------
+
+  composition ('has a' relationship)
+
+  MatchReader had a ref to outside reader
+
+  interface DataReader
+    read(): void, data: string[][]
+
+      |
+      v
+    
+  class MatchReader                  -> class ApiReader
+    reader(): DataReader                read(): void, data: string[][]
+    load(): void                    -> class CsvFileReader
+                                        read(): void, data: string[][]
+
+  example
+    wall: {height, width, area, color}
+    window: {height, width, area, open, toggleOpen}
+
+    inheritance
+      class Rectange: { height, width, area }
+
+      class Wall: {color}
+      class Window: {open, toggleOpen}
+
+      window is a child of rectange
+
+      there will be an issue if shape of window is circle or something else...
+      we will need to create another parent class Circle, then another class CircleWindow and RectWindow
+      to fix this issue, we can use composition based approach
+
+    composition:
+      class wall: { area(), color, shape }
+      class window: { area(), open, toggleOpen, shape }
+
+      window has a ref to Rectange
+
+      class Rectange: {height, width, area}
+      class Circle: {radius, area}
+
+  misconception around composition
