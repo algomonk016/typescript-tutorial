@@ -10,7 +10,7 @@ commit #10
     i.e (req, res) => {} // this one
 
     ts understands properties of the object
-    thus, middlerwares are counter productive to ts
+    thus, middlewares are counter productive to ts
     because middlewares are coded in js, so ts has no idea what properties are added or removed
     ex bodyparser middleware
 
@@ -19,3 +19,8 @@ commit #10
 
 commit #11
   login and logout feature
+  used session for storing session details
+
+commit #12
+  protected routes
+  using middlewares
