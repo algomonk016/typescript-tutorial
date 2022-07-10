@@ -92,3 +92,32 @@ commit #8:
       class Circle: {radius, area}
 
   misconception around composition
+
+commit #9:
+  issues:
+    - variable named after a specific team, 'Man United'
+    - analysis type is fixed, to count winCount
+    - no ability to output the report in different formats
+
+
+Generics
+  class ClassName<T> {
+    variable: T;
+    constructor(public data: T) {}
+  }
+
+  function printAnything<T> (arr: T[]) {}
+
+  Generics inference:
+    apne aap hi type le lega
+    printAnything(['a', 'b', 'c']) 
+    const obj = new ClassName('a')
+
+  ex: print array of objects, having print method
+  interface Printable {
+    print(): void;
+  }
+
+  function printAnything<T extends Printable>(arr: T[]) { }
+
+  printAnything(['1', '2', '3']) -> shows error, doesn't have method print
