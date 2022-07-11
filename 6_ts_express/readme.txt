@@ -78,3 +78,6 @@ commit #14:
   decorator factories
     - used to make decorators generic
     - nothing but a simple function that returns a decorator
+
+commit #15:
+  adding decorators in our project: methods{get, post, ...}, controller
